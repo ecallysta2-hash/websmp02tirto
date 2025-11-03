@@ -1,841 +1,376 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil Resmi SMPN 02 Tirto</title>
-    <!-- Favicon (opsional, ganti dengan logo sekolah) -->
-    <link
-      rel="icon"
-      href="https://placehold.co/32x32/0e7490/ffffff?text=S"
-      type="image/png"
-    />
-    <!-- Tailwind CSS (via CDN) -->
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMPN 02 Tirto - Profil Resmi Sekolah</title>
+    <!-- Memuat Tailwind CSS untuk styling modern dan responsif -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Konfigurasi Tailwind (opsional, untuk kustomisasi) -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "rgb(14 116 144)", // Cyan-700
-              secondary: "rgb(20 184 166)", // Teal-500
-            },
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
-    <!-- Font Inter dari Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Style kustom untuk scrollbar, dll -->
+    <!-- Konfigurasi Font Inter -->
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      /* Efek smooth pada navbar */
-      .navbar-fixed {
-        @apply fixed z-[999] bg-white bg-opacity-80 backdrop-blur-sm shadow-md;
-        animation: navbar-down 0.5s ease-out;
-      }
-      @keyframes navbar-down {
-        from {
-          transform: translateY(-100%);
-          opacity: 0;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
-        to {
-          transform: translateY(0);
-          opacity: 1;
+        .nav-link:hover {
+            color: #ffcc00; /* Kuning cerah untuk hover */
+            transition: color 0.3s;
         }
-      }
-      /* Tombol hamburger */
-      .hamburger-line {
-        @apply my-2 block h-[2px] w-[30px] bg-gray-800 transition duration-300 ease-in-out;
-      }
-      .hamburger-active > span:nth-child(1) {
-        @apply -rotate-45;
-      }
-      .hamburger-active > span:nth-child(2) {
-        @apply scale-0;
-      }
-      .hamburger-active > span:nth-child(3) {
-        @apply rotate-45;
-      }
-    </style>
-  </head>
+        .shadow-blue {
+            box-shadow: 0 10px 15px -3px rgba(0, 123, 255, 0.3), 0 4px 6px -2px rgba(0, 123, 255, 0.1);
+        }
+        /* Custom scrollbar untuk navigasi lancar */
+        html { scroll-behavior: smooth; }
 
-  <body class="bg-white text-gray-800">
-    <!-- 
-      ================================================================
-      HEADER / NAVBAR (Bar di kanan atas)
-      Ini adalah bagian yang Anda maksud. Ini tidak saya hilangkan.
-      ================================================================
-    -->
-    <header
-      id="beranda"
-      class="absolute left-0 top-0 z-10 flex w-full items-center bg-transparent"
-    >
-      <div class="container mx-auto px-4">
-        <div class="relative flex items-center justify-between">
-          <!-- Logo -->
-          <div class="px-4">
-            <a
-              href="#beranda"
-              class="block py-6 text-lg font-bold text-primary"
-              >SMPN 02 TIRTO</a
-            >
-          </div>
-          <!-- Menu & Hamburger -->
-          <div class="flex items-center px-4">
-            <!-- Tombol Hamburger (Mobile) -->
-            <button
-              id="hamburger"
-              name="hamburger"
-              type="button"
-              class="absolute right-4 block lg:hidden"
-            >
-              <span
-                class="hamburger-line origin-top-left transition"
-              ></span>
-              <span class="hamburger-line transition"></span>
-              <span
-                class="hamburger-line origin-bottom-left transition"
-              ></span>
-            </button>
-            <!-- Menu Navigasi (Desktop) -->
-            <nav
-              id="nav-menu"
-              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none"
-            >
-              <ul class="block lg:flex">
-                <li class="group">
-                  <a
-                    href="#beranda"
-                    class="mx-8 flex py-2 text-base text-gray-700 group-hover:text-primary"
-                    >Beranda</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#ppdb"
-                    class="mx-8 flex py-2 text-base text-gray-700 group-hover:text-primary"
-                    >INFO PPDB 2025/2026</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#visimisi"
-                    class="mx-8 flex py-2 text-base text-gray-700 group-hover:text-primary"
-                    >Visi & Misi</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#staff"
-                    class="mx-8 flex py-2 text-base text-gray-700 group-hover:text-primary"
-                    >Guru</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#kegiatan"
-                    class="mx-8 flex py-2 text-base text-gray-700 group-hover:text-primary"
-                    >Kegiatan</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#fasilitas"
-                    class="mx-8 flex py-2 text-base text-gray-700 group-hover:text-primary"
-                    >Fasilitas</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#kontak"
-                    class="mx-8 flex py-2 text-base text-gray-700 group-hover:text-primary"
-                    >Kontak</a
-                  >
-                </li>
-              </ul>
+        /* Untuk membuat gambar placeholder melengkung */
+        .rounded-full-placeholder {
+            background-color: #d1e7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #007bff;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigasi (Fixed Top) -->
+    <header class="bg-blue-800 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-white">SMPN 02 TIRTO</h1>
+            
+            <!-- Navigasi Desktop -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#beranda" class="nav-link text-white font-medium hover:text-yellow-300 transition duration-300">Beranda</a></li>
+                    <li><a href="#ppdb" class="nav-link text-white font-medium hover:text-yellow-300 transition duration-300">Info PPDB</a></li>
+                    <li><a href="#visimisi" class="nav-link text-white font-medium hover:text-yellow-300 transition duration-300">Visi & Misi</a></li>
+                    <li><a href="#staf" class="nav-link text-white font-medium hover:text-yellow-300 transition duration-300">Staf Pengajar</a></li>
+                    <li><a href="#fasilitas" class="nav-link text-white font-medium hover:text-yellow-300 transition duration-300">Fasilitas</a></li>
+                    <li><a href="#ekstra" class="nav-link text-white font-medium hover:text-yellow-300 transition duration-300">Ekskul</a></li>
+                    <li><a href="#kontak" class="nav-link bg-yellow-300 text-blue-800 px-4 py-2 rounded-full font-bold hover:bg-yellow-400 transition duration-300 shadow-md">Kontak</a></li>
+                </ul>
             </nav>
-          </div>
+            
+            <!-- Tombol Menu Mobile (Hamburger) -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
-      </div>
+        
+        <!-- Navigasi Mobile (Tergantung pada JavaScript) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-700">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li><a href="#beranda" class="nav-link block text-white p-2 rounded-md hover:bg-blue-600 transition duration-300">Beranda</a></li>
+                <li><a href="#ppdb" class="nav-link block text-white p-2 rounded-md hover:bg-blue-600 transition duration-300">Info PPDB</a></li>
+                <li><a href="#visimisi" class="nav-link block text-white p-2 rounded-md hover:bg-blue-600 transition duration-300">Visi & Misi</a></li>
+                <li><a href="#staf" class="nav-link block text-white p-2 rounded-md hover:bg-blue-600 transition duration-300">Staf Pengajar</a></li>
+                <li><a href="#fasilitas" class="nav-link block text-white p-2 rounded-md hover:bg-blue-600 transition duration-300">Fasilitas</a></li>
+                <li><a href="#ekstra" class="nav-link block text-white p-2 rounded-md hover:bg-blue-600 transition duration-300">Ekstrakurikuler</a></li>
+                <li><a href="#kontak" class="nav-link block bg-yellow-300 text-blue-800 p-2 rounded-md font-bold text-center hover:bg-yellow-400 transition duration-300 mt-2">Kontak Kami</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- Hero/Jumbotron -->
-    <section class="relative bg-gray-100 pb-20 pt-36">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-wrap items-center">
-          <!-- Teks Kiri -->
-          <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-4xl font-extrabold text-primary md:text-5xl">
-              Selamat Datang di SMPN 02 Tirto
-            </h1>
-            <p class="mb-8 mt-4 text-lg text-gray-600">
-              Mencetak generasi cerdas, berakhlak mulia, dan berwawasan global.
-            </p>
-            <a
-              href="#ppdb"
-              class="rounded-full bg-primary px-8 py-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-cyan-800 hover:shadow-lg"
-            >
-              Daftar PPDB Sekarang!
-            </a>
-          </div>
-          <!-- Gambar Kanan -->
-          <div class="mt-10 w-full self-end px-4 lg:mt-0 lg:w-1/2">
-            <div class="relative">
-              <img
-                src="https://placehold.co/1200x450/0e7490/ffffff?text=FOTO+GEDUNG+SEKOLAH+SMPN+02+TIRTO"
-                alt="Gedung SMPN 02 Tirto"
-                class="w-full rounded-lg shadow-lg"
-              />
+    <main>
+        <!-- 1. Beranda (Hero Section) -->
+        <section id="beranda" class="bg-blue-600 text-white py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-yellow-300 text-lg mb-2 font-semibold">Sekolah Unggulan Kabupaten Tirto</p>
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Mewujudkan Generasi Emas Penuh Prestasi</h2>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">SMPN 02 Tirto: Berkarakter, Cerdas, dan Berwawasan Lingkungan.</p>
+                <a href="#ppdb" class="bg-yellow-300 text-blue-800 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-400 transition duration-300 shadow-blue hover:shadow-lg">DAFTAR SEKARANG!</a>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Info PPDB -->
-    <section id="ppdb" class="bg-white py-24">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2
-            class="mb-4 text-3xl font-bold text-primary sm:text-4xl"
-          >
-            Penerimaan Peserta Didik Baru (PPDB)
-          </h2>
-          <p class="text-xl font-semibold text-gray-700">
-            Tahun Ajaran 2025/2026
-          </p>
-        </div>
+        <!-- 2. Info PPDB -->
+        <section id="ppdb" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-blue-800 mb-10 border-b-2 border-blue-400 pb-2">📣 Info Penerimaan Peserta Didik Baru (PPDB)</h2>
+                
+                <div class="max-w-4xl mx-auto bg-blue-50 p-8 rounded-xl shadow-lg border-t-4 border-blue-600">
+                    <p class="text-xl text-blue-800 font-semibold mb-4">Periode Pendaftaran Tahun Ajaran 2024/2025:</p>
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-blue-500">
+                            <p class="text-4xl font-extrabold text-blue-600">1</p>
+                            <p class="font-semibold mt-2">Pendaftaran Online</p>
+                            <p class="text-sm text-gray-500">1 - 10 Mei 2025</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-blue-500">
+                            <p class="text-4xl font-extrabold text-blue-600">2</p>
+                            <p class="font-semibold mt-2">Seleksi Berkas & Tes</p>
+                            <p class="text-sm text-gray-500">15 - 20 Mei 2025</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-blue-500">
+                            <p class="text-4xl font-extrabold text-blue-600">3</p>
+                            <p class="font-semibold mt-2">Pengumuman & Daftar Ulang</p>
+                            <p class="text-sm text-gray-500">25 - 30 Mei 2025</p>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-center text-lg">Informasi lengkap dan formulir pendaftaran dapat diakses melalui <a href="#" class="text-blue-600 font-bold hover:underline">Portal Resmi PPDB</a>.</p>
+                </div>
+            </div>
+        </section>
 
-        <div
-          class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-        >
-          <!-- Card 1: Jadwal -->
-          <div
-            class="rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-md"
-          >
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              🗓️
+        <!-- 3. Visi dan Misi -->
+        <section id="visimisi" class="py-16 bg-blue-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-blue-800 mb-10 border-b-2 border-blue-400 pb-2">✨ Visi dan Misi Sekolah</h2>
+                
+                <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                    <!-- Visi Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-500 border-l-8 border-blue-600">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4">Visi</h3>
+                        <p class="text-lg italic leading-relaxed">"Terwujudnya Peserta Didik yang Berakhlak Mulia, Unggul dalam Ilmu Pengetahuan dan Teknologi, Serta Berbudaya Lingkungan."</p>
+                    </div>
+                    
+                    <!-- Misi Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-500 border-l-8 border-blue-600">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4">Misi</h3>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                            <li>Meningkatkan keimanan dan ketakwaan melalui kegiatan keagamaan yang intensif.</li>
+                            <li>Mengembangkan potensi akademik dan non-akademik siswa secara maksimal.</li>
+                            <li>Menciptakan lingkungan belajar yang kondusif, nyaman, dan ramah anak.</li>
+                            <li>Menerapkan nilai-nilai karakter dalam setiap aspek pembelajaran.</li>
+                            <li>Mewujudkan sekolah yang bersih, sehat, dan peduli terhadap pelestarian lingkungan.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <h3 class="mb-2 text-xl font-semibold">Jadwal Penting</h3>
-            <ul class="list-inside list-disc space-y-1 text-gray-600">
-              <li>Pendaftaran Online: 1 - 15 Juni 2025</li>
-              <li>Verifikasi Dokumen: 16 - 20 Juni 2025</li>
-              <li>Pengumuman Hasil: 25 Juni 2025</li>
-            </ul>
-          </div>
-          <!-- Card 2: Syarat -->
-          <div
-            class="rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-md"
-          >
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              📄
-            </div>
-            <h3 class="mb-2 text-xl font-semibold">Persyaratan Umum</h3>
-            <ul class="list-inside list-disc space-y-1 text-gray-600">
-              <li>Lulusan SD/MI atau sederajat.</li>
-              <li>Usia maksimal 15 tahun per 1 Juli 2025.</li>
-              <li>Memiliki Akta Kelahiran/Surat Keterangan Lahir.</li>
-              <li>Memiliki Kartu Keluarga (KK).</li>
-            </ul>
-          </div>
-          <!-- Card 3: Alur -->
-          <div
-            class="rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-md"
-          >
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              ➡️
-            </div>
-            <h3 class="mb-2 text-xl font-semibold">Alur Pendaftaran</h3>
-            <ol class="list-inside list-decimal space-y-1 text-gray-600">
-              <li>Buka laman PPDB resmi kota.</li>
-              <li>Isi formulir pendaftaran dan unggah berkas.</li>
-              <li>Cetak Tanda Bukti Pendaftaran.</li>
-              <li>Pantau status verifikasi dan hasil seleksi.</li>
-            </ol>
-          </div>
-        </div>
+        </section>
 
-        <!-- Tombol Aksi PPDB Dihapus -->
-        <div class="mt-16 text-center">
-          <p class="mt-4 text-gray-600">
-            Untuk pertanyaan lebih lanjut, silakan hubungi kontak sekolah kami.
-          </p>
-        </div>
-      </div>
-    </section>
+        <!-- 4. Staf Pengajar -->
+        <section id="staf" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-blue-800 mb-10 border-b-2 border-blue-400 pb-2">👨‍🏫 Staf Pengajar & Karyawan Pilihan</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Didukung oleh tenaga pendidik profesional, berpengalaman, dan berdedikasi tinggi untuk membimbing putra-putri Anda.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <!-- Card Staf 1 -->
+                    <div class="text-center p-4 bg-gray-100 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full-placeholder rounded-full overflow-hidden">
+                            <!-- Placeholder Gambar -->
+                            <span class="text-sm">Foto Kepala Sekolah</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-blue-800">Bpk. Dr. H. Sumarno, M.Pd.</h4>
+                        <p class="text-sm text-gray-500 italic">Kepala Sekolah</p>
+                    </div>
+                    
+                    <!-- Card Staf 2 -->
+                    <div class="text-center p-4 bg-gray-100 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full-placeholder rounded-full overflow-hidden">
+                             <!-- Placeholder Gambar -->
+                            <span class="text-sm">Foto Guru</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-blue-800">Ibu Siti Khadijah, S.Pd.</h4>
+                        <p class="text-sm text-gray-500">Guru Matematika</p>
+                    </div>
 
-    <!-- Visi Misi -->
-    <section id="visimisi" class="bg-gray-100 py-24">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2
-            class="mb-4 text-3xl font-bold text-primary sm:text-4xl"
-          >
-            Visi & Misi
-          </h2>
-        </div>
-        <div class="flex flex-wrap justify-center gap-8">
-          <!-- Visi -->
-          <div class="w-full lg:w-2/5">
-            <div
-              class="rounded-lg bg-white p-8 shadow-lg"
-              style="min-height: 280px"
-            >
-              <h3 class="mb-4 text-2xl font-semibold">Visi</h3>
-              <blockquote
-                class="border-l-4 border-primary pl-4 text-lg italic text-gray-600"
-              >
-                "Terwujudnya Peserta Didik yang Unggul dalam Prestasi, Berbudaya
-                Lingkungan, dan Berlandaskan Iman dan Taqwa."
-              </blockquote>
-            </div>
-          </div>
-          <!-- Misi -->
-          <div class="w-full lg:w-2/5">
-            <div
-              class="rounded-lg bg-white p-8 shadow-lg"
-              style="min-height: 280px"
-            >
-              <h3 class="mb-4 text-2xl font-semibold">Misi</h3>
-              <ul class="space-y-2 text-gray-600">
-                <li class="flex items-start">
-                  <span class="mr-2 text-primary">✓</span>
-                  <span>
-                    Meningkatkan mutu pembelajaran dan pembinaan secara efektif.
-                  </span>
-                </li>
-                <li class="flex items-start">
-                  <span class="mr-2 text-primary">✓</span>
-                  <span>
-                    Mengembangkan potensi diri peserta didik di bidang akademik
-                    dan non-akademik.
-                  </span>
-                </li>
-                <li class="flex items-start">
-                  <span class="mr-2 text-primary">✓</span>
-                  <span> Membentuk karakter religius dan mandiri. </span>
-                </li>
-                <li class="flex items-start">
-                  <span class="mr-2 text-primary">✓</span>
-                  <span>
-                    Menciptakan lingkungan sekolah yang bersih, indah, dan
-                    nyaman.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                    <!-- Card Staf 3 -->
+                    <div class="text-center p-4 bg-gray-100 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full-placeholder rounded-full overflow-hidden">
+                            <!-- Placeholder Gambar -->
+                            <span class="text-sm">Foto Guru</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-blue-800">Bpk. Andi Wijaya, M.Kom.</h4>
+                        <p class="text-sm text-gray-500">Guru TIK & Komputer</p>
+                    </div>
 
-    <!-- Staf Pengajar -->
-    <section id="staff" class="bg-white py-24">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2
-            class="mb-4 text-3xl font-bold text-primary sm:text-4xl"
-          >
-            Staf Pengajar (Guru)
-          </h2>
-        </div>
-        <!-- Daftar Guru -->
-        <div
-          class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
-        >
-          <!-- Guru 1 -->
-          <div
-            class="transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="https://placehold.co/120x120/0e7490/ffffff?text=Bapak"
-              alt="Foto Bapak Budi Santoso"
-              class="mx-auto mb-4 h-32 w-32 rounded-full border-4 border-white object-cover shadow-md"
-            />
-            <h4 class="text-xl font-semibold text-primary">
-              Bapak Budi Santoso
-            </h4>
-            <p class="text-gray-600">Kepala Sekolah</p>
-            <p class="text-sm text-gray-500">Pendidikan Agama</p>
-          </div>
-          <!-- Guru 2 -->
-          <div
-            class="transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="https://placehold.co/120x120/14b8a6/ffffff?text=Ibu"
-              alt="Foto Ibu Siti Aminah"
-              class="mx-auto mb-4 h-32 w-32 rounded-full border-4 border-white object-cover shadow-md"
-            />
-            <h4 class="text-xl font-semibold text-primary">
-              Ibu Siti Aminah
-            </h4>
-            <p class="text-gray-600">Guru Matematika</p>
-            <p class="text-sm text-gray-500">Wali Kelas IX-A</p>
-          </div>
-          <!-- Guru 3 -->
-          <div
-            class="transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="https://placehold.co/120x120/0e7490/ffffff?text=Bapak"
-              alt="Foto Bapak Joko Susilo"
-              class="mx-auto mb-4 h-32 w-32 rounded-full border-4 border-white object-cover shadow-md"
-            />
-            <h4 class="text-xl font-semibold text-primary">
-              Bapak Joko Susilo
-            </h4>
-            <p class="text-gray-600">Guru Bahasa Inggris</p>
-            <p class="text-sm text-gray-500">Pembina OSIS</p>
-          </div>
-          <!-- Guru 4 -->
-          <div
-            class="transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="https://placehold.co/120x120/14b8a6/ffffff?text=Ibu"
-              alt="Foto Ibu Rina Dewi"
-              class="mx-auto mb-4 h-32 w-32 rounded-full border-4 border-white object-cover shadow-md"
-            />
-            <h4 class="text-xl font-semibold text-primary">
-              Ibu Rina Dewi
-            </h4>
-            <p class="text-gray-600">Guru IPA</p>
-            <p class="text-sm text-gray-500">Koordinator Lab</p>
-          </div>
+                    <!-- Card Staf 4 -->
+                    <div class="text-center p-4 bg-gray-100 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full-placeholder rounded-full overflow-hidden">
+                            <!-- Placeholder Gambar -->
+                            <span class="text-sm">Foto Guru</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-blue-800">Ibu Maya Sari, S.E.</h4>
+                        <p class="text-sm text-gray-500">Staf Tata Usaha</p>
+                    </div>
+                    <!-- Tambahkan card staf lainnya sesuai kebutuhan -->
+                </div>
+            </div>
+        </section>
 
-          <!-- Staf Tambahan (Awalnya Tersembunyi) -->
-          <!-- Guru 5 (Tersembunyi) -->
-          <div
-            class="staff-tambahan hidden transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="https://placehold.co/120x120/0e7490/ffffff?text=Bapak"
-              alt="Foto Bapak Ahmad"
-              class="mx-auto mb-4 h-32 w-32 rounded-full border-4 border-white object-cover shadow-md"
-            />
-            <h4 class="text-xl font-semibold text-primary">
-              Bapak Ahmad Hidayat
-            </h4>
-            <p class="text-gray-600">Guru IPS</p>
-            <p class="text-sm text-gray-500">Wali Kelas VIII-B</p>
-          </div>
-          <!-- Guru 6 (Tersembunyi) -->
-          <div
-            class="staff-tambahan hidden transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="https://placehold.co/120x120/14b8a6/ffffff?text=Ibu"
-              alt="Foto Ibu Wulan"
-              class="mx-auto mb-4 h-32 w-32 rounded-full border-4 border-white object-cover shadow-md"
-            />
-            <h4 class="text-xl font-semibold text-primary">
-              Ibu Wulan Sari
-            </h4>
-            <p class="text-gray-600">Guru Bahasa Indonesia</p>
-            <p class="text-sm text-gray-500">Pembina Mading</p>
-          </div>
-          <!-- Guru 7 (Tersembunyi) -->
-          <div
-            class="staff-tambahan hidden transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="https://placehold.co/120x120/0e7490/ffffff?text=Bapak"
-              alt="Foto Bapak Eko"
-              class="mx-auto mb-4 h-32 w-32 rounded-full border-4 border-white object-cover shadow-md"
-            />
-            <h4 class="text-xl font-semibold text-primary">
-              Bapak Eko Prasetyo
-            </h4>
-            <p class="text-gray-600">Guru PJOK</p>
-            <p class="text-sm text-gray-500">Pelatih Futsal</p>
-          </div>
-          <!-- Guru 8 (Tersembunyi) -->
-          <div
-            class="staff-tambahan hidden transform rounded-lg bg-gray-50 p-6 text-center shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="https://placehold.co/120x120/14b8a6/ffffff?text=Ibu"
-              alt="Foto Ibu Dewi"
-              class="mx-auto mb-4 h-32 w-32 rounded-full border-4 border-white object-cover shadow-md"
-            />
-            <h4 class="text-xl font-semibold text-primary">
-              Ibu Dewi Lestari
-            </h4>
-            <p class="text-gray-600">Guru Seni Budaya</p>
-            <p class="text-sm text-gray-500">Pelatih Tari</p>
-          </div>
-        </div>
+        <!-- 5. Fasilitas -->
+        <section id="fasilitas" class="py-16 bg-blue-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-blue-800 mb-10 border-b-2 border-blue-400 pb-2">🏫 Fasilitas Pendukung Belajar</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Kami menyediakan berbagai fasilitas modern untuk menunjang proses belajar-mengajar dan kenyamanan siswa.</p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Fasilitas 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-600">
+                        <img src="https://placehold.co/600x400/007bff/ffffff?text=LAB+KOMPUTER" alt="Laboratorium Komputer" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-xl text-blue-800 mb-2">Laboratorium Komputer</h4>
+                            <p class="text-gray-600">Dilengkapi dengan 40 unit PC terbaru dan jaringan internet cepat untuk mendukung pembelajaran TIK dan riset.</p>
+                        </div>
+                    </div>
 
-        <!-- Tombol Aksi Staf -->
-        <div class="mt-16 text-center">
-          <button
-            id="tombol-staff"
-            type="button"
-            class="rounded-full bg-primary px-10 py-4 text-lg font-semibold text-white transition duration-300 ease-in-out hover:bg-cyan-800 hover:shadow-lg"
-          >
-            Lihat Daftar Lengkap Staf Pengajar
-          </button>
-        </div>
-      </div>
-    </section>
+                    <!-- Fasilitas 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-600">
+                        <img src="https://placehold.co/600x400/007bff/ffffff?text=PERPUSTAKAAN" alt="Perpustakaan" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-xl text-blue-800 mb-2">Perpustakaan Digital & Fisik</h4>
+                            <p class="text-gray-600">Koleksi buku lengkap, area baca yang nyaman, dan akses ke e-book untuk menambah wawasan.</p>
+                        </div>
+                    </div>
 
-    <!-- Kegiatan / Ekstrakurikuler -->
-    <section id="kegiatan" class="bg-gray-100 py-24">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2
-            class="mb-4 text-3xl font-bold text-primary sm:text-4xl"
-          >
-            Kegiatan & Ekstrakurikuler
-          </h2>
-        </div>
-        <div
-          class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-        >
-          <!-- Kegiatan 1 -->
-          <div class="rounded-lg bg-white p-6 shadow-md">
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              ⚽
+                    <!-- Fasilitas 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-600">
+                        <img src="https://placehold.co/600x400/007bff/ffffff?text=LAPANGAN+OLAHRAGA" alt="Lapangan Olahraga" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-bold text-xl text-blue-800 mb-2">Lapangan Olahraga Serbaguna</h4>
+                            <p class="text-gray-600">Fasilitas lapangan Futsal, Basket, dan Voli standar untuk kegiatan olahraga dan ekstrakurikuler.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3 class="mb-2 text-xl font-semibold">
-              Ekstrakurikuler Futsal
-            </h3>
-            <p class="text-gray-600">
-              Tim futsal sekolah rutin berlatih dan mengikuti kompetisi antar
-              sekolah di tingkat kabupaten, menumbuhkan jiwa sportivitas.
-            </p>
-          </div>
-          <!-- Kegiatan 2 -->
-          <div class="rounded-lg bg-white p-6 shadow-md">
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              🎨
+        </section>
+        
+        <!-- 6. Prestasi -->
+        <section id="prestasi" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-blue-800 mb-10 border-b-2 border-blue-400 pb-2">🏆 Capaian & Prestasi Kebanggaan</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Dedikasi siswa dan guru SMPN 02 Tirto membuahkan hasil di berbagai ajang kompetisi.</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- Prestasi 1 -->
+                    <div class="bg-yellow-50 p-6 rounded-lg border border-yellow-300 flex items-start space-x-4">
+                        <span class="text-3xl text-yellow-500">🏅</span>
+                        <div>
+                            <h4 class="font-bold text-lg text-blue-800">Juara 1 Lomba Cerdas Cermat Sains</h4>
+                            <p class="text-sm text-gray-600">Tingkat Kabupaten (2024)</p>
+                        </div>
+                    </div>
+                    <!-- Prestasi 2 -->
+                    <div class="bg-yellow-50 p-6 rounded-lg border border-yellow-300 flex items-start space-x-4">
+                        <span class="text-3xl text-yellow-500">🥇</span>
+                        <div>
+                            <h4 class="font-bold text-lg text-blue-800">Medali Emas Olimpiade Bahasa Inggris</h4>
+                            <p class="text-sm text-gray-600">Tingkat Provinsi (2023)</p>
+                        </div>
+                    </div>
+                    <!-- Prestasi 3 -->
+                    <div class="bg-yellow-50 p-6 rounded-lg border border-yellow-300 flex items-start space-x-4">
+                        <span class="text-3xl text-yellow-500">🏆</span>
+                        <div>
+                            <h4 class="font-bold text-lg text-blue-800">Sekolah Adiwiyata Tingkat Nasional</h4>
+                            <p class="text-sm text-gray-600">Penghargaan Menteri Lingkungan Hidup (2022)</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3 class="mb-2 text-xl font-semibold">Pentas Seni Tahunan</h3>
-            <p class="text-gray-600">
-              Acara tahunan menampilkan bakat siswa dalam seni tari, musik,
-              drama, dan paduan suara, wadah kreativitas tanpa batas.
-            </p>
-          </div>
-          <!-- Kegiatan 3 -->
-          <div class="rounded-lg bg-white p-6 shadow-md">
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              🌿
-            </div>
-            <h3 class="mb-2 text-xl font-semibold">
-              Jum'at Bersih dan Hijau
-            </h3>
-            <p class="text-gray-600">
-              Kegiatan rutin untuk menanam dan merawat taman sekolah, mendukung
-              program sekolah Adiwiyata dan peduli lingkungan.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Prestasi -->
-    <section id="prestasi" class="bg-white py-24">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2
-            class="mb-4 text-3xl font-bold text-primary sm:text-4xl"
-          >
-            Prestasi Sekolah & Siswa
-          </h2>
-        </div>
-        <div
-          class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-        >
-          <!-- Prestasi 1 -->
-          <div
-            class="rounded-lg border-l-4 border-primary bg-gray-50 p-6 shadow-sm"
-          >
-            <div class="mb-2 text-3xl">🥇</div>
-            <h3 class="text-lg font-semibold">
-              Juara 1 Lomba Sains Tingkat Kabupaten
-            </h3>
-            <p class="text-sm text-gray-600">
-              Diraih oleh Ananda Sarah (Kelas IX) pada tahun 2024. Pencapaian
-              yang membanggakan!
-            </p>
-          </div>
-          <!-- Prestasi 2 -->
-          <div
-            class="rounded-lg border-l-4 border-primary bg-gray-50 p-6 shadow-sm"
-          >
-            <div class="mb-2 text-3xl">🏆</div>
-            <h3 class="text-lg font-semibold">Sekolah Adiwiyata Provinsi</h3>
-            <p class="text-sm text-gray-600">
-              Penghargaan atas komitmen sekolah terhadap pelestarian lingkungan
-              dan budaya hijau.
-            </p>
-          </div>
-          <!-- Prestasi 3 -->
-          <div
-            class="rounded-lg border-l-4 border-primary bg-gray-50 p-6 shadow-sm"
-          >
-            <div class="mb-2 text-3xl">🏅</div>
-            <h3 class="text-lg font-semibold">
-              Juara Umum Turnamen Bola Voli SMP Se-Karesidenan
-            </h3>
-            <p class="text-sm text-gray-600">
-              Tim Voli Putra SMPN 02 Tirto tahun 2023, menunjukkan dominasi di
-              bidang olahraga.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- 7. Ekstrakurikuler -->
+        <section id="ekstra" class="py-16 bg-blue-600 text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-white mb-10 border-b-2 border-yellow-300 pb-2">🎨 Kembangkan Bakatmu! (Ekstrakurikuler)</h2>
+                
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <!-- Ekskul Card 1 -->
+                    <div class="p-4 bg-blue-700 rounded-lg text-center hover:bg-blue-800 transition duration-300 shadow-md">
+                        <span class="text-4xl block mb-2">⚽</span>
+                        <h4 class="font-semibold text-lg">Futsal & Basket</h4>
+                    </div>
+                    <!-- Ekskul Card 2 -->
+                    <div class="p-4 bg-blue-700 rounded-lg text-center hover:bg-blue-800 transition duration-300 shadow-md">
+                        <span class="text-4xl block mb-2">🏕️</span>
+                        <h4 class="font-semibold text-lg">Pramuka (Wajib)</h4>
+                    </div>
+                    <!-- Ekskul Card 3 -->
+                    <div class="p-4 bg-blue-700 rounded-lg text-center hover:bg-blue-800 transition duration-300 shadow-md">
+                        <span class="text-4xl block mb-2">🥁</span>
+                        <h4 class="font-semibold text-lg">Seni Musik & Tari</h4>
+                    </div>
+                    <!-- Ekskul Card 4 -->
+                    <div class="p-4 bg-blue-700 rounded-lg text-center hover:bg-blue-800 transition duration-300 shadow-md">
+                        <span class="text-4xl block mb-2">🔬</span>
+                        <h4 class="font-semibold text-lg">Karya Ilmiah Remaja (KIR)</h4>
+                    </div>
+                    
+                </div>
+                <p class="text-center mt-8 italic opacity-80">Kami memiliki 10+ pilihan ekskul lainnya, termasuk Paskibra dan Bahasa Inggris Club.</p>
+            </div>
+        </section>
 
-    <!-- Fasilitas -->
-    <section id="fasilitas" class="bg-gray-100 py-24">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2
-            class="mb-4 text-3xl font-bold text-primary sm:text-4xl"
-          >
-            Fasilitas Sekolah
-          </h2>
-        </div>
-        <div
-          class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
-        >
-          <!-- Fasilitas 1 -->
-          <div class="rounded-lg bg-white p-6 shadow-md">
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              💻
+        <!-- 8. Kontak yang Bisa Dihubungi -->
+        <section id="kontak" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-blue-800 mb-10 border-b-2 border-blue-400 pb-2">📍 Kontak dan Lokasi Sekolah</h2>
+                
+                <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <!-- Detail Kontak -->
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Detail Kontak</h3>
+                        <p class="flex items-center mb-3"><span class="text-blue-600 mr-3">📞</span> **Telepon:** (0285) 555-0202</p>
+                        <p class="flex items-center mb-3"><span class="text-blue-600 mr-3">📧</span> **Email:** smpn02tirto@sch.id</p>
+                        <p class="flex items-center mb-3"><span class="text-blue-600 mr-3">📱</span> **WhatsApp PPDB:** +62 812-3456-7890</p>
+                        <p class="flex items-start"><span class="text-blue-600 mr-3 mt-1">🏠</span> **Alamat:** Jl. Pendidikan No. 2, Desa Tirto, Kec. Tirto, Kab. [Nama Kabupaten], 51173.</p>
+                    </div>
+                    
+                    <!-- Form Kontak Sederhana -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Kirim Pesan Cepat</h3>
+                        <form action="#" method="POST">
+                            <input type="text" placeholder="Nama Anda" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required>
+                            <input type="email" placeholder="Email Anda" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required>
+                            <textarea placeholder="Pesan Anda" rows="4" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required></textarea>
+                            <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 transition duration-300 shadow-md">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Peta Lokasi (Placeholder) -->
+                <div class="mt-10 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4 text-center">Peta Lokasi</h3>
+                    <!-- Ganti iframe di bawah dengan kode peta Google Maps sekolah Anda -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15830.43542751493!2d109.62002131238495!3d-7.009495753068735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f43e067c82739%3A0x6b4f7e1b520c1a84!2sTirto%2C%20Pekalongan%20Regency%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="rounded-xl shadow-xl">
+                    </iframe>
+                </div>
             </div>
-            <h3 class="mb-2 text-xl font-semibold">
-              Laboratorium Komputer
-            </h3>
-            <p class="text-gray-600">
-              Dilengkapi 30 unit PC dengan akses internet cepat untuk menunjang
-              kegiatan TIK.
-            </p>
-          </div>
-          <!-- Fasilitas 2 -->
-          <div class="rounded-lg bg-white p-6 shadow-md">
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              🔬
-            </div>
-            <h3 class="mb-2 text-xl font-semibold">Laboratorium IPA</h3>
-            <p class="text-gray-600">
-              Alat peraga dan bahan praktikum fisika, kimia, biologi lengkap dan
-              modern.
-            </p>
-          </div>
-          <!-- Fasilitas 3 -->
-          <div class="rounded-lg bg-white p-6 shadow-md">
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              📚
-            </div>
-            <h3 class="mb-2 text-xl font-semibold">Perpustakaan Digital</h3>
-            <p class="text-gray-600">
-              Koleksi buku cetak dan *e-book* yang memadai serta ruang baca yang
-              nyaman.
-            </SA>
-          </div>
-          <!-- Fasilitas 4 -->
-          <div class="rounded-lg bg-white p-6 shadow-md">
-            <div
-              class="mb-4 inline-block rounded-full bg-cyan-100 p-3 text-3xl text-primary"
-            >
-              🏀
-            </div>
-            <h3 class="mb-2 text-xl font-semibold">Lapangan Olahraga</h3>
-            <p class="text-gray-600">
-              Lapangan multifungsi untuk basket, voli, dan futsal, mendukung
-              kegiatan fisik siswa.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Kontak -->
-    <section id="kontak" class="bg-primary py-24 text-white">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <h2 class="mb-4 text-3xl font-bold sm:text-4xl">
-            Hubungi Kami
-          </h2>
-        </div>
-        <div
-          class="flex flex-wrap rounded-lg bg-white/10 p-8 shadow-xl backdrop-blur-sm"
-        >
-          <!-- Info Kiri -->
-          <div class="w-full lg:w-1/2">
-            <h3 class="mb-6 text-2xl font-semibold">Informasi Kontak</h3>
-            <div class="mb-4 flex items-start">
-              <span class="mr-4 text-2xl">📍</span>
-              <div>
-                <h4 class="font-semibold">Alamat</h4>
-                <p>
-                  Jl. Pendidikan No. 02, Tirto, [Nama Kota]
-                </p>
-              </div>
-            </div>
-            <div class="mb-4 flex items-start">
-              <span class="mr-4 text-2xl">✉️</span>
-              <div>
-                <h4 class="font-semibold">Email</h4>
-                <p>smpn02tirto@sekolah.id</p>
-              </div>
-            </div>
-            <div class="mb-4 flex items-start">
-              <span class="mr-4 text-2xl">📞</span>
-              <div>
-                <h4 class="font-semibold">Telepon</h4>
-                <p>(0285) 123456</p>
-              </div>
-            </div>
-          </div>
-          <!-- Form Kanan -->
-          <div class="mt-10 w-full lg:mt-0 lg:w-1/2">
-            <h3 class="mb-6 text-2xl font-semibold">Kirim Pesan Cepat</h3>
-            <form action="#" method="POST">
-              <div class="mb-4">
-                <label for="nama" class="mb-2 block">Nama Lengkap</label>
-                <input
-                  type="text"
-                  id="nama"
-                  name="nama"
-                  class="w-full rounded-md bg-white/20 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
-                  placeholder="Nama Anda"
-                />
-              </div>
-              <div class="mb-4">
-                <label for="email" class="mb-2 block">Email</label>
-                <input
-                  type;
-                  "email"
-                  id="email"
-                  name="email"
-                  class="w-full rounded-md bg-white/20 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
-                  placeholder="email@anda.com"
-                />
-              </div>
-              <div class="mb-4">
-                <label for="pesan" class="mb-2 block">Pesan</label>
-                <textarea
-                  id="pesan"
-                  name="pesan"
-                  rows="4"
-                  class="w-full rounded-md bg-white/20 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
-                  placeholder="Tuliskan pesan Anda..."
-                ></textarea>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  class="rounded-full bg-white px-8 py-3 font-semibold text-primary transition duration-300 ease-in-out hover:bg-gray-200"
-                >
-                  Kirim Pesan
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-8 text-center text-gray-400">
-      <div class="container mx-auto px-4">
-        <p>© 2025 SMPN 02 Tirto. | Semua Hak Cipta Dilindungi.</p>
-        <p class="text-sm">Dibuat dengan semangat pendidikan.</p>
-      </div>
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">SMPN 02 Tirto | Mencetak Generasi Berkarakter dan Berprestasi</p>
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">Facebook</a>
+                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">Instagram</a>
+                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">Youtube</a>
+            </div>
+            <p class="text-sm opacity-75">&copy; 2025 SMPN 02 Tirto. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- Skrip JavaScript -->
+    <!-- JavaScript untuk Navigasi Mobile -->
     <script>
-      // Efek Navbar Fixed saat di-scroll
-      window.onscroll = function () {
-        const header = document.querySelector("header");
-        const fixedNav = header.offsetTop;
-
-        if (window.pageYOffset > fixedNav) {
-          header.classList.add("navbar-fixed");
-        } else {
-          header.classList.remove("navbar-fixed");
-        }
-      };
-
-      // Logika Tombol Hamburger
-      const hamburger = document.querySelector("#hamburger");
-      const navMenu = document.querySelector("#nav-menu");
-
-      hamburger.addEventListener("click", function () {
-        hamburger.classList.toggle("hamburger-active");
-        navMenu.classList.toggle("hidden");
-      });
-
-      // Klik di luar hamburger
-      window.addEventListener("click", function (e) {
-        if (
-          e.target != hamburger &&
-          !hamburger.contains(e.target) &&
-          e.target != navMenu &&
-          !navMenu.contains(e.target)
-        ) {
-          hamburger.classList.remove("hamburger-active");
-          navMenu.classList.add("hidden");
-        }
-      });
-
-      // Logika untuk tombol "Lihat Staf"
-      const tombolStaff = document.querySelector("#tombol-staff");
-      const staffTambahan = document.querySelectorAll(".staff-tambahan");
-
-      tombolStaff.addEventListener("click", function () {
-        // Toggle (perlihatkan/sembunyikan) setiap kartu staf tambahan
-        staffTambahan.forEach(function (staff) {
-          staff.classList.toggle("hidden");
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // Cek status setelah di-toggle
-        // Kita cek elemen pertama saja sebagai referensi
-        const isHidden = staffTambahan[0].classList.contains("hidden");
-
-        // Ubah teks tombol berdasarkan status
-        if (isHidden) {
-          tombolStaff.textContent = "Lihat Daftar Lengkap Staf Pengajar";
-        } else {
-          tombolStaff.textContent = "Sembunyikan Daftar";
-        }
-      });
+        // Menutup menu mobile ketika tautan diklik (khusus di mobile)
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden');
+            });
+        });
     </script>
-  </body>
-</html>
 
+</body>
+</html>
