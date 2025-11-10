@@ -103,56 +103,40 @@
 
     <main>
         <!-- 1. Beranda (Hero Section) -->
-        <section id="beranda" class="bg-blue-600 text-white py-20 md:py-32">
-            <div class="container mx-auto px-6 text-center">
-                <p class="text-yellow-300 text-lg mb-2 font-semibold">Sekolah Unggulan Kabupaten Tirto</p>
-                <h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Mewujudkan Generasi Emas Penuh Prestasi</h2>
-                <p class="text-xl md:text-2xl mb-8 opacity-90">SMPN 02 Tirto: Berkarakter, Cerdas, dan Berwawasan Lingkungan.</p>
-                <a href="#ppdb" class="bg-yellow-300 text-blue-800 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-400 transition duration-300 shadow-blue hover:shadow-lg">LIHAT SYARAT PPDB</a>
-            </div>
-        </section>
+        <section id="beranda" class="relative py-20 md:py-32">
+			<img 
+				src="muka.jpg" 
+				alt="Background Sekolah" 
+				class="absolute inset-0 w-full h-full object-cover"
+			>
+		<div class="absolute inset-0 bg-blue-800 opacity-70"></div> 
+    
+		<div class="container mx-auto px-6 text-center relative z-10 text-white">
+			<p class="text-yellow-300 text-lg mb-2 font-semibold">Sekolah Unggulan Kabupaten Tirto</p>
+			<h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Mewujudkan Generasi Emas Penuh Prestasi</h2>
+			<p class="text-xl md:text-2xl mb-8 opacity-90">SMPN 02 Tirto: Berkarakter, Cerdas, dan Berwawasan Lingkungan.</p>
+			<a href="#ppdb" class="bg-yellow-300 text-blue-800 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-400 transition duration-300 shadow-blue hover:shadow-lg">LIHAT SYARAT PPDB</a>
+		</div>
+</section>
 
         <!-- 2. Syarat Pendaftaran PPDB (DIUBAH) -->
-        <section id="ppdb" class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-blue-800 mb-10 border-b-2 border-blue-400 pb-2">✅ Syarat Pendaftaran Peserta Didik Baru (PPDB)</h2>
-                
-                <div class="max-w-4xl mx-auto bg-blue-50 p-8 rounded-xl shadow-lg border-t-4 border-blue-600">
-                    <p class="text-xl text-blue-800 font-semibold mb-4">Calon peserta didik wajib memenuhi persyaratan sebagai berikut:</p>
-                    <ul class="space-y-4 text-gray-700 list-none">
-                        <li class="flex items-start">
-                            <span class="text-blue-600 font-bold text-2xl mr-3">1.</span>
-                            <div>
-                                <p class="font-semibold">Ijazah SD/Sederajat</p>
-                                <p class="text-sm">Scan asli atau fotokopi yang dilegalisir (maksimal 2 tahun terakhir).</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 font-bold text-2xl mr-3">2.</span>
-                            <div>
-                                <p class="font-semibold">Akte Kelahiran dan Kartu Keluarga (KK)</p>
-                                <p class="text-sm">Fotokopi Akte Kelahiran dan Kartu Keluarga (KK) yang sudah dilegalisir.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 font-bold text-2xl mr-3">3.</span>
-                            <div>
-                                <p class="font-semibold">Usia Maksimal</p>
-                                <p class="text-sm">Berusia paling tinggi 15 (lima belas) tahun pada tanggal 1 Juli tahun berjalan.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 font-bold text-2xl mr-3">4.</span>
-                            <div>
-                                <p class="font-semibold">Pas Foto Terbaru</p>
-                                <p class="text-sm">Ukuran 3x4 berwarna (2 lembar, latar belakang biru).</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <p class="mt-8 text-center text-lg text-blue-800">Pendaftaran dilakukan secara online pada periode Mei-Juni. Seluruh dokumen diunggah melalui <a href="#" class="text-blue-600 font-bold hover:underline">Portal Resmi PPDB</a>.</p>
-                </div>
-            </div>
-        </section>
+		<section id="ppdb" class="py-16 bg-white">
+			<div class="container mx-auto px-6">
+				<div class="max-w-3xl mx-auto text-center p-8 bg-blue-50 rounded-xl shadow-xl border-t-4 border-blue-600">
+					
+					<h2 class="text-3xl md:text-4xl font-extrabold text-blue-800 mb-4">Punya Pertanyaan Tentang PPDB?</h2>
+					<p class="text-lg text-gray-700 mb-8">Tim kami siap membantu Anda dengan informasi mengenai PPDB atau hal lainnya.</p>
+
+					<a 
+						href="#kontak" 
+						class="inline-block bg-yellow-400 text-blue-800 px-10 py-4 rounded-full font-bold text-xl hover:bg-yellow-500 transition duration-300 shadow-lg transform hover:scale-105"
+					>
+						📞 Hubungi Kami Sekarang
+					</a>
+					
+				</div>
+			</div>
+		</section>
 
         <!-- 3. Visi dan Misi -->
         <section id="visimisi" class="py-16 bg-blue-50">
@@ -226,7 +210,7 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Fasilitas 1 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-600">
-                        <img src="https://placehold.co/600x400/007bff/ffffff?text=LAB+KOMPUTER" alt="Laboratorium Komputer" class="w-full h-48 object-cover">
+                        <img src="lab.jpg" alt="Laboratorium Komputer" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h4 class="font-bold text-xl text-blue-800 mb-2">Laboratorium Komputer</h4>
                             <p class="text-gray-600">Dilengkapi dengan 40 unit PC terbaru dan jaringan internet cepat untuk mendukung pembelajaran TIK dan riset.</p>
@@ -235,7 +219,7 @@
 
                     <!-- Fasilitas 2 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-600">
-                        <img src="https://placehold.co/600x400/007bff/ffffff?text=PERPUSTAKAAN" alt="Perpustakaan" class="w-full h-48 object-cover">
+                        <img src="perpus.jpg" alt="Perpustakaan" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h4 class="font-bold text-xl text-blue-800 mb-2">Perpustakaan Digital & Fisik</h4>
                             <p class="text-gray-600">Koleksi buku lengkap, area baca yang nyaman, dan akses ke e-book untuk menambah wawasan.</p>
@@ -244,7 +228,7 @@
 
                     <!-- Fasilitas 3 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-600">
-                        <img src="https://placehold.co/600x400/007bff/ffffff?text=LAPANGAN+OLAHRAGA" alt="Lapangan Olahraga" class="w-full h-48 object-cover">
+                        <img src="lapangan.jpg" alt="Lapangan Olahraga" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h4 class="font-bold text-xl text-blue-800 mb-2">Lapangan Olahraga Serbaguna</h4>
                             <p class="text-gray-600">Fasilitas lapangan Futsal, Basket, dan Voli standar untuk kegiatan olahraga dan ekstrakurikuler.</p>
@@ -263,32 +247,32 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     <!-- Galeri Item 1 -->
                     <div class="gallery-item">
-                        <img src="https://placehold.co/600x400/007bff/ffffff?text=Upacara+Bendera" alt="Upacara Bendera">
+                        <img src="bendera.jpg" alt="Upacara Bendera">
                         <div class="gallery-caption">Upacara Bendera Senin Pagi</div>
                     </div>
                     <!-- Galeri Item 2 -->
                     <div class="gallery-item">
-                        <img src="https://placehold.co/600x400/007bff/ffffff?text=Pramuka" alt="Kegiatan Pramuka">
+                        <img src="pramuka.jpg" alt="Kegiatan Pramuka">
                         <div class="gallery-caption">Perkemahan Sabtu Minggu (Persami)</div>
                     </div>
                     <!-- Galeri Item 3 -->
                     <div class="gallery-item">
-                        <img src="https://placehold.co/600x400/007bff/ffffff?text=Lab+IPA" alt="Praktikum IPA">
+                        <img src="lebipa.jpg" alt="Praktikum IPA">
                         <div class="gallery-caption">Praktikum IPA di Laboratorium</div>
                     </div>
                     <!-- Galeri Item 4 -->
                     <div class="gallery-item">
-                        <img src="https://placehold.co/600x400/007bff/ffffff?text=Lomba+Kelas" alt="Lomba Kebersihan Kelas">
+                        <img src="lombakelas.jpg" alt="Lomba Kebersihan Kelas">
                         <div class="gallery-caption">Lomba Kebersihan Antar Kelas</div>
                     </div>
                     <!-- Galeri Item 5 -->
                     <div class="gallery-item">
-                        <img src="https://placehold.co/600x400/007bff/ffffff?text=Futsal" alt="Tim Futsal">
+                        <img src="voli.jpg" alt="Tim Futsal">
                         <div class="gallery-caption">Tim Futsal Berlatih</div>
                     </div>
                     <!-- Galeri Item 6 -->
                     <div class="gallery-item">
-                        <img src="https://placehold.co/600x400/007bff/ffffff?text=Seni+Tari" alt="Seni Tari">
+                        <img src="tari.jpg" alt="Seni Tari">
                         <div class="gallery-caption">Pementasan Seni Tari Tradisional</div>
                     </div>
                     <!-- Tambahkan item galeri lainnya di sini -->
@@ -402,14 +386,56 @@
                     
                     <!-- Form Kontak Sederhana -->
                     <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
-                        <h3 class="text-xl font-bold text-blue-800 mb-4">Kirim Pesan Cepat</h3>
-                        <form action="#" method="POST">
-                            <input type="text" placeholder="Nama Anda" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required>
-                            <input type="email" placeholder="Email Anda" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required>
-                            <textarea placeholder="Pesan Anda" rows="4" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required></textarea>
-                            <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 transition duration-300 shadow-md">Kirim Pesan</button>
-                        </form>
-                    </div>
+    <h3 class="text-xl font-bold text-blue-800 mb-4">Kirim Pesan Cepat via WhatsApp</h3>
+    
+    <form id="whatsappForm">
+        <input type="text" id="namaPengirim" placeholder="Nama Anda" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required>
+        <textarea id="pesanPengirim" placeholder="Pesan Anda" rows="4" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required></textarea>
+        
+        <button 
+            type="button" 
+            onclick="kirimPesanWhatsApp()" 
+            class="w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 transition duration-300 shadow-md"
+        >
+            Kirim Pesan via WhatsApp
+        </button>
+    </form>
+</div>
+
+<script>
+    function kirimPesanWhatsApp() {
+        // Nomor tujuan WhatsApp
+        const nomorWA = "+6285879353175";
+        
+        // Ambil nilai dari input form (Hanya Nama dan Pesan)
+        const nama = document.getElementById('namaPengirim').value;
+        const pesan = document.getElementById('pesanPengirim').value;
+
+        // Validasi sederhana (pastikan kedua field terisi)
+        if (!nama || !pesan) {
+            alert("Mohon lengkapi kolom Nama dan Pesan sebelum mengirim.");
+            return;
+        }
+
+        // Susun teks pesan, hanya menyertakan <nama> dan <pesan>
+        const teksPesan = 
+            `*Pesan dari Website*\n\n` +
+            `Nama Pengirim: ${nama}\n` +
+            `Isi Pesan:\n${pesan}`; // Format output: <nama>, <pesan>
+        
+        // Encode teks pesan agar aman dikirimkan melalui URL
+        const encodedPesan = encodeURIComponent(teksPesan);
+        
+        // Buat link wa.me
+        const waLink = `https://wa.me/${nomorWA}?text=${encodedPesan}`;
+        
+        // Buka link di tab baru
+        window.open(waLink, '_blank');
+        
+        // Opsional: Reset form setelah link dibuka
+        document.getElementById('whatsappForm').reset();
+    }
+</script>
                 </div>
                 
                 <!-- Peta Lokasi (Placeholder) -->
@@ -434,11 +460,11 @@
     <!-- Footer -->
     <footer class="bg-blue-900 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p class="mb-2">SMPN 02 Tirto | Mencetak Generasi Berkarakter dan Berprestasi</p>
+            <p class="mb-2">SMP N 02 Tirto | TKJ SMK Maárif NU Tirto</p>
             <div class="flex justify-center space-x-4 mb-4">
-                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">Facebook</a>
-                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">Instagram</a>
-                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">Youtube</a>
+                <a href="www.facebook.com" class="text-white hover:text-yellow-300 transition duration-300">Facebook</a>
+                <a href="www.instagram.com" class="text-white hover:text-yellow-300 transition duration-300">Instagram</a>
+                <a href="www.youtube.com" class="text-white hover:text-yellow-300 transition duration-300">Youtube</a>
             </div>
             <p class="text-sm opacity-75">&copy; 2025 SMPN 02 Tirto. All Rights Reserved.</p>
         </div>
